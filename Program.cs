@@ -476,7 +476,7 @@ namespace ConverterApp
                     }
                 }
 
-                //TODO: зделать транслитерацию
+                //TODO: cделать транслитерацию
                 outObj.NOTPAR670 = fiiledperson;
                 outObj.GOOITEGDS = listOfGoods.ToArray();
 
@@ -612,7 +612,7 @@ public static class Translator
         using (var webClient = new WebClient())
         {               
 #if DEBUG            
-            key ="trnsl.1.1.20190311T084808Z.98e7458597dcc795.f0f95d83f517de18f305da1756de6e7be9c69ecd";
+            key ="[API_KEY]";
 #endif
             url = url + "?key=" + key + "&text=" + text+ "&lang=ru-lt";
            
