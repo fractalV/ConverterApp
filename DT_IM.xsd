@@ -1,0 +1,2668 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 rel. 3 sp1 (http://www.altova.com) by LTT (Lattelecom Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.4">
+        <xs:element name="IcsIE" type="IcsIEType">
+            <xs:annotation>
+                <xs:documentation>Структура импортной декларации</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+    <xs:complexType name="IcsIEType">
+        <xs:sequence>
+            <xs:element name="MesTypMES20">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:minLength value="3"/>
+                            <xs:maxLength value="3"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+            </xs:element>
+            <xs:element name="HEAHEA" type="HEAHEAType">
+                <xs:annotation>
+                    <xs:documentation>Заголовок</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="TRACONCO1" type="TRACONCO1Type" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>2. Грузоотправитель</xs:documentation>
+                </xs:annotation></xs:element>
+            <xs:element name="TRACONCE1" type="TRACONCE1Type" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>8. Получатель</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="TRAREP" type="TRAREPType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>14. Декларант / Представитель</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="NOTPAR670" type="NOTPAR670Type" minOccurs="0">
+                <xs:annotation><xs:documentation>Информация о персоне</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="GDSLOC" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Местонахождение товара</xs:documentation>
+                </xs:annotation><xs:complexType>
+                    <xs:choice>
+                        <xs:element name="GDSLOCStr" type="GDSLOCType" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Расположение товаров (структурированное)</xs:documentation>
+                            </xs:annotation></xs:element>
+                        <xs:element name="GDSLOCUnStr" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Расположение продукта (неструктурированное)</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="250"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                    </xs:choice>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="WAR" minOccurs="0">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="WARType"/>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GOOITEGDS" type="GOOITEGDSType" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Товары</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="STA" type="STAType" minOccurs="0">
+                <xs:annotation><xs:documentation>Расчет статистической стоимости</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="MVD" type="MVDType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Декларация таможенной стоимости</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+<!-- ===== HEADER =====-->
+<xs:complexType name="HEAHEAType">
+    <xs:annotation>
+        <xs:documentation>Galvene</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="RefNumEPT1">
+            <xs:annotation>
+                <xs:documentation>A.2. Код таможни ввоза</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="8"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="CusOffENT730" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>29. Код таможни на границе</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="8"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="VerNumHEA992" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Количество исправлений в документе, номер версии (до выпуска)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                    <xs:totalDigits value="32"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="RefNumHEA4" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>7. Номер для отслеживания (LRN)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="70"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="DocNumHEA5" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>MRN</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="18"/>
+                    <xs:maxLength value="18"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="PosCleVerHEA1005" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Количество исправлений в документе, номер версии после выпуска товара</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                    <xs:totalDigits value="32"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="DecWorDatHEA999" type="xs:dateTime" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Дата</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="DecWorDatChReaTyp" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Причина смены рабочей даты</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="35"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="DecWorDatChRea" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Причина смены рабочей даты</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="150"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="DecPlaHEA394" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>54.1. Место подачи</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="35"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="DecDatHEA383" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>54.2. Дата подачи</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:dateTime"/>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="SurPC19" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>54.3. Декларант Имя,  фамилия / Название</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="254"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="DecAccDatHEA1" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Дата принятия</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:dateTime"/>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="IssDatHEA186" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Дата выпуска</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:dateTime"/>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="DatOfCanReqHEA147" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Дата отмены</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:dateTime"/>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="ExtStoDatEXR68" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Дата приостановления</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:dateTime"/>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="TypOfOpeHEA994">
+            <xs:annotation>
+                <xs:documentation>Тип операции</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="5"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="OpeCodHEA995" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Код операции</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="1"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="TotNumOfIteHEA305" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>5. Количество товаров (позиций)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                    <xs:totalDigits value="3"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="TotNumOfPacHEA306" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>6. Общее кол-во гр. мест</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                    <xs:totalDigits value="17"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="TotGroMasHEA307" type="decimal_11_3" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Общий вес брутто (kg)</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="TotNetMasHEA307" type="decimal_11_3" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Общий вес нетто (kg)</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="CouOfDesCodHEA30" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>17.1. Код страны назначения</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="4"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="CouOfDisCodHEA55" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>15.1. Страна отправки / экспортный код</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="4"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="TypOfPriGHEA1003" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>14.a. Статус декларанта / представителя (форма представительства)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                    <xs:totalDigits value="1"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="TesIndMES18" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Режим отмены (1/0)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="FlagType"/>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="IdeOfMeaOfTraAtDHEA78" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>18.1. Идентификационный номер автомобиля</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="54"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="ConIndHEA96" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>19. Контейнер (1 - использованные контейнеры, 0 неиспользованные)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="FlagType"/>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="DelReqCodHEA992" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>20.1. Код условий доставки</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="6"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="DesOfDelReqHEA993" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>20.2. Место доставки</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="70"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="NatOfMeaOfTraCroHEA87" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>21.2. Страна принадлежности действующего транспортного средства, пересекающего границу</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="4"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="TraModAtBorHEA76" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>25. Вид транспорта на границе</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                    <xs:totalDigits value="2"/>
+                    <xs:fractionDigits value="0"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="InlTraModHEA75" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>26. Режим внутреннего транспорта</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                    <xs:totalDigits value="2"/>
+                    <xs:fractionDigits value="0"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="ValDat12" type="decimal_12_2_negative" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>12. начение данных</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="TypOfDeaHEA995" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>24. Код символа транзакции</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="2"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="AddNot" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Дополнительные заметки</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="Cur126" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>22.1. Код валюты</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="3"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="RatVal127" type="decimal_8_6" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>23. Курс обмена валют</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="RatVal127ManFlag" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Курс валюты рассчитывается вручную (1/0)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="FlagType"/>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="TotValHEA994" type="decimal_13_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>22.2 Общая сумма счета</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="TotValHEANat994" type="decimal_13_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Общая сумма счета (в национальной валюте)</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="ExpInvAm" type="decimal_11_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Всего накладных расходов</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="ExpInvNatAm" type="decimal_11_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Всего накладных (национальная валю</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="SubStrInvAm" type="decimal_11_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Общая сумма франшизы</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="SubStrInvNatAm" type="decimal_11_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Общая сумма франшизы (национальная валюта)</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="StaVal168" type="decimal_11_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Общая статистическая ценность</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="StaValNat168" type="decimal_11_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Общая статистическая стоимость (в национальной валюте)</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="CurDocIndHEA986">
+            <xs:annotation>
+                <xs:documentation>Знак того, что копия документа является актуальной (1-Да, 0 Нет)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="FlagType"/>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="StaHEA379" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Статус декларации на импорт</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="10"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="DatOfStaChaHEA987" type="xs:dateTime" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Дата изменения статуса</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="DefPay48" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>48.1 Отсроченный платеж - Авансовый платеж</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="17"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="DefPayVGA48" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>48.2 Отсрочка платежа - Гарантия</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="7"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="CanDecHEA93" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Знак отмены</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="1"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="CusProCodGDS379" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>37.1.1. Запрашиваемый код процедуры</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="4"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="DeclBCom" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Тип B полное / неполное объявление (1-полное, неполное)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="FlagType"/>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="DeclBFilRea" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Обоснование для заполнения декларации типа B</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="MVD_FLAG" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Декларация таможенной стоимости: 1 - заполнена; 0 - пусто</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="FlagType"/>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="TotValINVSTAT" minOccurs="0">     
+            <xs:annotation>
+                <xs:documentation>Общая сумма счета</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="20"/>
+                    <xs:fractionDigits value="2"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="TrdSta" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Статус трейдера (1 - Программа расширенного сотрудничества (Белый список); 2 - Национальный орган)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="TrdStaType"/>
+            </xs:simpleType>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<!--===== CONSIGNOR =====-->
+<xs:complexType name="TRACONCO1Type">
+    <xs:annotation>
+        <xs:documentation>2. Грузоотправитель</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="NamCO17" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Имя, Фамилия / Имя</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="254"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="StrAndNumCO122" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Улица, номер</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="254"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="PosCodCO123" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Почтовый индекс</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="9"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="CitCO124" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Город / округ</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="254"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="CouCO125" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Код страны</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="2"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="TINCO159" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>ИНФОРМАЦИЯ</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="17"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<!--=====CONSIGNEE =====-->
+<xs:complexType name="TRACONCE1Type">
+    <xs:annotation>
+        <xs:documentation>8. Получатель</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="NamCE17" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Имя, Фамилия / Имя</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="254"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="StrAndNumCE122" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Улица, номер</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="254"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="PosCodCE123" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Почтовый индекс</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="9"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="CitCE124" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Город / округ</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="254"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="CouCE125" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Код страны</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="2"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="TINCE159">
+            <xs:annotation>
+                <xs:documentation>ИНФОРМАЦИЯ</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="17"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<!--=====REPRESENTATIVE =====-->
+<xs:complexType name="TRAREPType">
+    <xs:annotation>
+        <xs:documentation>14. b. 2. Декларант / Представитель</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="NamTRE1" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Имя, Фамилия / Имя</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="254"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="StrAndNumTRE1" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Улица, номер</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="254"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="PosCodTRE1" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Почтовый индекс</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="9"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="CitTRE1" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Город / округ</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="254"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="CouCodTRE1" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Код страны</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="2"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="TINTRE1">
+            <xs:annotation>
+                <xs:documentation>ИНФОРМАЦИЯ</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="17"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<!--=====NOTIFY PARTY =====-->
+<xs:complexType name="NOTPAR670Type">
+    <xs:annotation>
+        <xs:documentation>Мы информируем человека</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="NamNOTPAR672" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Имя, Фамилия / Имя</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="254"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="StrNumNOTPAR673" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Улица, номер</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="254"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="PosCodNOTPAR676" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Почтовый индекс</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="9"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="CitNOTPAR674" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Город / округ</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="254"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="CouCodNOTPAR675" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Код страны</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="2"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="TINNOTPAR671" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>ИНФОРМАЦИЯ</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="17"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<!--=====GOODS LOCATION =====-->
+<xs:complexType name="GDSLOCType">
+    <xs:annotation>
+        <xs:documentation>30. Местонахождение товара</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="CitGdsLoc" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>30.1. Город</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="35"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="StrGdsLoc" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>30.2. Улица</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="35"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="StrNumLoc" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>30.2. Дом</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="35"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="PosCodGdsLoc" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>30.4. Почтовый индекс</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="9"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="CouCodGdsLoc" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>30.5. Страна</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="2"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<!--=====WAREHOUSE =====-->
+<xs:complexType name="WARType">
+    <xs:annotation>
+        <xs:documentation>49. Идентификация склада</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="WarTypWARTyp" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>49.1. Тип склада</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="1"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="WarTypWARId" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>49.2. Идентификационный номер склада</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="14"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="WarTypWARCou" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>49.3. Код страны выдачи разрешения на склад</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="2"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<!--=====GOODS ITEM =====-->
+<xs:complexType name="GOOITEGDSType">
+    <xs:annotation>
+        <xs:documentation>Декларация товаров</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="GooDesGDS23" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>31.1. Описание продукта</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="IteNumGDS7" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Технический номер продукта</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                    <xs:totalDigits value="32"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="IteNumB32F1" minOccurs="1">
+            <xs:annotation>
+                <xs:documentation>Номер товара</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                    <xs:totalDigits value="32"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="ComCodTarCodGDS10">
+            <xs:annotation>
+                <xs:documentation>33. Код продукта  </xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="10"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="CouOfOriCodGDS63" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>34. Код страны происхождения</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="2"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="GroMasGDS46" type="decimal_8_3">
+            <xs:annotation>
+                <xs:documentation>35. Масса брутто (kg)</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="NetMasGDS48" type="decimal_8_3">
+            <xs:annotation>
+                <xs:documentation>38. Масса нетто (кг)</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="TARGDS60" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>33. Расширение кода продукта TARIC</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="2"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="QuaOfGooGDS376" type="decimal_8_3" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>41.1. Количество в дополнительной единице</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="BasUniOfMea377" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>41.2. Дополнительный блок</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="3"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="BasUniOfMea378" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>41.2. Вспомогательные единицы отмечены</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="1"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="CusProCodGDS379" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>37.1. Запрашиваемый код процедуры + предыдущий код процедуры</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="4"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="AddCusProCodGDS340" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>37.2. Код дополнительной процедуры</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="3"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="FirAddTARCodGDS61" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>33.3. Элемент 1. Дополнительный код</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="4"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="SecAddTARCodGDS62" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>33.4. Элемент 2. Дополнительный код</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="4"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="SecAddTARCodGDS63" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>33.5. Элемент 3. Дополнительный код</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="4"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="TotValGoo994" type="decimal_11_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Цена продукта</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="TotValGooNat994" type="decimal_11_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Цена продукта (национальная валюта)</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="ExpInvGooAm" type="decimal_11_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Сумма накладных расходов</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="ExpInvGooNatAm" type="decimal_11_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Сумма накладных расходов (национальная валюта)</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="SubStrInvGooAm" type="decimal_11_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Сумма вычитаемых расходов</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="SubStrInvGooNatAm" type="decimal_11_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Сумма вычитаемых расходов (национальная валюта)</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="StaValOfGoo168" type="decimal_11_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Статистическая стоимость</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="StaValOfGooNat168" type="decimal_11_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Статистическая стоимость (в национальной валюте)</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="UniPriNat" type="decimal_12_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Цена за единицу (национальная валюта)</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="QuoB39" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>39. Квота</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="6"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="GooInvB42" type="decimal_11_2">
+            <xs:annotation>
+                <xs:documentation>42. Цена товара</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="AppRecMet" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>43. Метод оценки</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="1"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="PreB36" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>36. Преференция</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="3"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="GooInvSTA" type="STAValType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Цена продукта</xs:documentation>
+            </xs:annotation>
+            <!--type="decimal_11_2" minOccurs="0"> -->
+        </xs:element>
+        <xs:element name="InsGooAmSTA" type="STAValType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Страхование</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="OutGooFreAmSTA" type="STAValType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Внешний фрахт</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="InnGooFreAmSTA" type="STAValType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Внутрренний фрахт</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="OthGooCstAmSTA" type="STAValType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Другие расходы</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="DedGooAmSTA" type="STAValType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Вычеты</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="InlGooTAXAmSTA" type="STAValType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Внутренний НДС</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="PACGS2" type="PACGS2Type" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="CONNR2" type="CONNR2Type" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="PRODOCDC2" type="PRODOCDC2Type" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="PREADMREFAR2" type="PREADMREFAR2Type" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="UNIOFMEa" type="UniOfMeaType" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="SPEMENMT2" type="SPEMENMT2Type" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="TAXTA" type="TAXAType" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="ItemTaxManCal" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Признак того, что осуществляется ручной расчет (1/0)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="FlagType"/>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="ItemTaxManCalRea" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Обоснование ручного расчета</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="CompensationDate" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Дата расчета % компенсации</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:dateTime"/>
+            </xs:simpleType>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<!--=====UNITS OF MEASUREMENT =====-->
+<xs:complexType name="UniOfMeaType">
+    <xs:annotation>
+        <xs:documentation>41. Дополнительные единицы</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="QuaOfGooGDS376" type="decimal_8_3" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>41.1. Количество в дополнительной единице</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="BasUniOfMea377" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>41.2. Дополнительный блок</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="3"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="BasUniOfMea378" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>41.3. Единицы измерения Дополнительное обозначение</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="1"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<!--=====PRODUCED DOCUMENTS =====-->
+<xs:complexType name="PRODOCDC2Type">
+    <xs:annotation>
+        <xs:documentation>44. Выданные документы, сертификаты и разрешения</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="DocCoDC28" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Сопровождающий код документа</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="4"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="DocTyp" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Тип документа</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="20"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="TitDC29" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Регистрационный номер документа</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="35"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="DocRegDat" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Дата оформления документа</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:dateTime"/>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="OriFlag" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Документ о происхождении (1-да, 0-нет)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="FlagType"/>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="ComOfInfDC25" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Дополнительная информация о документе</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="OthItemFlag" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Укажите, распространяется ли документ на все товары (1 - да, 0 - нет)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="FlagType"/>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="ItemFileAtt" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Файл компонента или сопроводительный документ (есть / не добавлен) (1 - есть, 0 - нет)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="FlagType"/>
+            </xs:simpleType>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<!--=====PACKAGES =====-->
+<xs:complexType name="PACGS2Type">
+    <xs:annotation>
+        <xs:documentation>31.3. Пакеты продуктов</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="KinOfPacGS23" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>31.3.1. Тип упаковки</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="3"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="MarNumOfPacGS21" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>31.3.2. Марка / Номер</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="140"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="NumOfPacGS24" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>31.3.3. Количество упаковок</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                    <xs:totalDigits value="32"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="NumOfPieGS25" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>31.3.4. Количество штук</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                    <xs:totalDigits value="32"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="OthItemPackFlag" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Товар упакован в другой товар (1 - да, 0 - нет)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="FlagType"/>
+            </xs:simpleType>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<!--=====CONTAINERS =====-->
+<xs:complexType name="CONNR2Type">
+    <xs:annotation>
+        <xs:documentation>31.2. Номера контейнеров</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="ConNumNR21" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>31.2. Номер контейнера</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="17"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<!--=====PREVIOUS DOCUMENTS =====-->
+<xs:complexType name="PREADMREFAR2Type">
+    <xs:annotation>
+        <xs:documentation>40. Общая декларация / Предыдущий документ</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="PreDocTyp" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>40.1. Советы по документам</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="1"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="TitAR212" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>40.2. Тип документа</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="6"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="PreDocRefAR26" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>40.3. Идентификационный номер документа</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="35"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="AllGoodsFlag" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Все предметы (1 - да, 0 - нет)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="FlagType"/>
+            </xs:simpleType>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<!--=====SPECIAL MENTIONS =====-->
+<xs:complexType name="SPEMENMT2Type">
+    <xs:annotation>
+        <xs:documentation>44.1. Дополнительная информация</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="AddInfCodMT23" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>44.1.1. Код дополнительной информации</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="5"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="AddInfCodDescr" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>44.1.2.Описание кода дополнительной информации</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="350"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="AddInfMT21" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>44.1.3. Дополнительная информация</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="70"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<!--=====TAXATION =====-->
+<xs:complexType name="TAXAType">
+    <xs:annotation>
+        <xs:documentation>47. Дополнительная информация</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="TypOfTaxTAXA1">
+            <xs:annotation>
+                <xs:documentation>47.1. Тип налога</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="3"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="BasOfTaxTAXA2" type="decimal_9_2">
+            <xs:annotation>
+                <xs:documentation>47.2. Налоговая база</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="TaxRate" type="decimal_4_4">
+            <xs:annotation>
+                <xs:documentation>47.3. Налоговая ставка</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="TaxAmoTAXA5" type="decimal_9_2">
+            <xs:annotation>
+                <xs:documentation>47.4. Сумма налога</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="PayOrdTAXA6">
+            <xs:annotation>
+                <xs:documentation>47.5. Условия оплаты</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="1"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="TaxManCal">
+            <xs:annotation>
+                <xs:documentation>Индикация ручного расчета (1/0)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="FlagType"/>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="TaxManCalRea" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Обоснование ручного расчета</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="TaxState" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Ссылка на CL_TAX_STATE. Поле определяет конкретные налоги</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                    <xs:totalDigits value="2"/>
+                    <xs:fractionDigits value="0"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="PvnId" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Уникальный идентификатор для связанного НДС</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                    <xs:totalDigits value="32"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<!--=====STATISTICAL VALUE =====-->
+<xs:complexType name="STAType">
+    <xs:annotation>
+        <xs:documentation>Статистическая ценность на уровне декларации</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="InvAmSTA" type="STAValType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Общая сумма счета</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="InsAmSTA" type="STAValType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Страхование</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="OutFreAmSTA" type="STAValType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Внешний фрахт</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="InnFreAmSTA" type="STAValType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Внутренний фрахт</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="OthCstAmSTA" type="STAValType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Другие расходы</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="DedAmSTA" type="STAValType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Вычеты</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="InlTAXAmSTA" type="STAValType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Внутренний НДС</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<!--=====STATISTICAL VALUE ELEMENTS =====-->
+<xs:complexType name="STAValType">
+    <xs:annotation>
+        <xs:documentation>Статистические элементы стоимости</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="CurSTAElm" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Валюта</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="3"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="AmSTAElm" type="decimal_11_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Количество</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="DivMetAmSTA" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Метод распределения</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="35"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="RatVal" type="decimal_8_6" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Курс валюта</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="AmSTAElmNat" type="decimal_18_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Сумма в национальной валюте</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="AmSTAElmInv" type="decimal_18_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Сумма в валюте выставления счета</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<!--=====MVD VALUE =====-->
+<xs:complexType name="MVDType">
+    <xs:annotation>
+        <xs:documentation>Декларация таможенной стоимости</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="Seller" type="MVDSellValType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Продавец</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="Buyer" type="MVDBuyValType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Покупатель</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="Invoices" type="InvoicesType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Счет-фактура</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="Agreements" type="AgreementsType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Соглашение</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="PrevDecisions" type="PrevDecisionsType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Предыдущие таможенные решения</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="B7A_FLAG" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>7а Связаны ли Покупатель и Продавец Регламентом (EEC) № 1782/92? По смыслу статьи 143 Регламента (ЕЭС) № 2454/93?</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="FlagType"/>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="B7B_FLAG" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>7.b. Повлияли ли эти отношения на цену импортных товаров?</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="FlagType"/>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="B7C_FLAG" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>7.c. Является ли стоимость сделки с импортируемыми товарами такой же, как у Регламента (ЕЭС) № 1408/71? Значение, указанное в Статье 29 (2) (b) Регламента (ЕЭС) № 2913/92?</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="FlagType"/>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="B7_NOTES" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Замечания</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="B8A_FLAG" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>8.a. Существуют ли какие-либо ограничения, как Покупатель размещены на рынке или бывших в употреблении товаров, за исключением ограничений, которые, за исключением: - накладываемых законом или требуемых государственными органами в Сообществе, - ограниченный географический район, в котором товары могут быть проданы снова, или - не оказывают существенного влияния на стоимость товаров ? </xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="FlagType"/>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="B8B_FLAG" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>8.b. Подлежит ли продажа или цена каким-либо условиям или соображениям, которые делают невозможным определение стоимости оцениваемых товаров? Если можно определить стоимость условия или возмещения, укажите сумму 11.b </xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="FlagType"/>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="B8_NOTES" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Замечания</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="B9A_FLAG" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>9.a. Должен ли покупатель платить какие-либо прямые или косвенные лицензионные сборы в качестве условия продажи? Если «Да» и, если возможно, укажите сумму в 15.</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="FlagType"/>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="B9B_FLAG" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>9.b. Подлежит ли продажа условию, при котором прибыль от любой последующей перепродажи, продажи или использования получает продавец прямо или косвенно? Если «Да» и, если возможно, укажите сумму в 16.</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="FlagType"/>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="B9_NOTES" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Заменчания</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="CustValueCalc" type="CustValueCalcType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Расчет таможенной стоимости</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<xs:complexType name="MVDSellValType">
+    <xs:annotation>
+        <xs:documentation>MVD Продавец</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="NamSell" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Имя, Фамилия/ Название</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="254"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="StrAndNumSell" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Улица, номер</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="254"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="PosCodSell" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Почтовый индекс</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="9"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="CitSell" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Город / округ</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="254"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="CouSell" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Код страны</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="2"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="TINSell" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>TIN</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="17"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<xs:complexType name="MVDBuyValType">
+    <xs:annotation>
+        <xs:documentation>MVD Покупатель</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="NamBuy" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Имя, Фамилия / Название</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="254"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="StrAndNumBuy" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Улица, номер</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="254"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="PosCodBuy" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Почтовый индекс</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="9"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="CitBuy" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Город / округ</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="254"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="CouBuy" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Код страны</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="2"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="TINBuy" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>TIN</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="17"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<xs:complexType name="InvoicesType">
+    <xs:annotation>
+        <xs:documentation>MVD Список элементов счета</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="Invoice" type="InvoiceType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+                <xs:documentation>Фактура</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<xs:complexType name="InvoiceType">
+    <xs:annotation>
+        <xs:documentation>MVD Элементы списка счетов-фактур</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="InvoiceDocRef" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>4.1. Номер счета</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="20"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="InvoiceDocDate" type="xs:dateTime" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>4.2. Дата выставления счета</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<xs:complexType name="AgreementsType">
+    <xs:annotation>
+        <xs:documentation>MVD Список контрактов</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="Agreement" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+                <xs:documentation>Соглашение</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+                <xs:complexContent>
+                    <xs:extension base="AgreementType">
+                        <xs:sequence>
+                            <xs:element name="AgreementDocRef" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:documentation>5.1. Номер договора</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="20"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="AgreementDocDate" type="xs:dateTime" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:documentation>5.2. Дата договора</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<xs:complexType name="AgreementType">
+    <xs:annotation>
+        <xs:documentation>MVD список контрактов вошли элементы</xs:documentation>
+    </xs:annotation>
+</xs:complexType>
+<xs:complexType name="PrevDecisionsType">
+    <xs:annotation>
+        <xs:documentation>Элементы предыдущих решений МВД по списку таможни</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="PrevDecision" type="PrevDecisionType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+                <xs:documentation>Таможенное предварительное решение</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<xs:complexType name="PrevDecisionType">
+    <xs:annotation>
+        <xs:documentation>Предыдущие решения таможни по списку элементов МВД</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="PrevDecisionDocRef" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>6.1. Таможня предыдущий номер решения</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="20"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="PrevDecisionDocDate" type="xs:dateTime" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>6.2. Дата предыдущего таможенного решения</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<xs:complexType name="ACalcBaseType">
+    <xs:annotation>
+        <xs:documentation>MVD Разделы A Базовые элементы расчета</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="idok_dkl_mvd_11a" type="MVDCalcType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>11.a. Чистая стоимость в валюте выставления счета (фактическая выставленная сумма или фактическая цена выставления счета в фактическое время)</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="idok_dkl_mvd_11b" type="MVDCalcType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>11.b. Косвенные платежи - см. 8.b</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="B12aBaseTotal" type="decimal_15_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>12. A Общая сумма</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<xs:complexType name="MVDCalcType">
+    <xs:annotation>
+        <xs:documentation>Значение, валюта, курс, стоимость в национальной валюте</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="Value" type="decimal_11_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Значение</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="Currency" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Валюта</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="3"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="CurrRate" type="decimal_2_6" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Курсы</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="ValueNatCur" type="decimal_12_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Значение в национальной валюте</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<xs:complexType name="BOverheadsType">
+    <xs:annotation>
+        <xs:documentation>Элементы накладных расходов по разделу B МВД</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="idok_dkl_mvd_13a" type="MVDCalcType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>13.a. Плата без учета комиссии за покупку</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="idok_dkl_mvd_13b" type="MVDCalcType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>13.b. Посредническая комиссия</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="idok_dkl_mvd_13c" type="MVDCalcType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>13.c. Контейнеры и упаковка</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="idok_dkl_mvd_14a" type="MVDCalcType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>14.a. Материалы, детали и аналогичные предметы, включенные в импортные товары</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="idok_dkl_mvd_14b" type="MVDCalcType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>14.b. Инструменты, штампы, пресс-формы и аналогичные предметы, используемые при изготовлении импортных товаров</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="idok_dkl_mvd_14c" type="MVDCalcType" minOccurs="0"/>
+        <xs:element name="idok_dkl_mvd_14d" type="MVDCalcType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>14.d. Инженерные, художественные разработки, дизайнерские работы, эскизы и эскизы, сделанные за пределами ЕС и необходимые для производства импортных товаров</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="idok_dkl_mvd_15" type="MVDCalcType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>15. Оплатить лицензии - sk. 9.a</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="idok_dkl_mvd_16" type="MVDCalcType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>16. Доход продавца от любого из следующих продаж, продаж или использования - см .: 9b</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="idok_dkl_mvd_17a" type="MVDCalcType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>17.a. Транспорт</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="idok_dkl_mvd_17b" type="MVDCalcType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>17.b. Плата за погрузку и обработку</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="idok_dkl_mvd_17c" type="MVDCalcType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>17.c. Cтрахование</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="B17DeliveryCostsPlaces" minOccurs="0">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="30"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="B18bBaseTotal" type="decimal_15_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>18. B всего</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<xs:complexType name="CSubtractCostsType">
+    <xs:annotation>
+        <xs:documentation>Разделы МВД С. Элементы вычитаемых затрат</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="idok_dkl_mvd_19" type="MVDCalcType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>19. Транспортные расходы после прибытия в пункт въезда</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="idok_dkl_mvd_20" type="MVDCalcType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>20. Платежи за установку, монтаж, сборку, обслуживание или техническую помощь после внедрения</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="idok_dkl_mvd_21" type="MVDCalcPosNameType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>21. Другие платежи (указать)</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="idok_dkl_mvd_22" type="MVDCalcType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>22. Таможенные пошлины и налоги, уплачиваемые в ЕC при ввозе или продаже товаров</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="B23SubtractCostsTotal" type="decimal_15_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>23. Общая сумма франшизы</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<xs:complexType name="CustValueCalcType">
+    <xs:annotation>
+        <xs:documentation>Элементы расчета таможенной стоимости для отделов МВД</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="ACalcBase" type="ACalcBaseType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>A. Расчетная база</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="BOverheads" type="BOverheadsType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>B. Накладные расходы</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="CSubtractCosts" type="CSubtractCostsType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>C. Вычитаемые расходы</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="B24DeclaredTotal" type="decimal_15_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>24. Объявленная стоимость (A + B - C)</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="CustValueCalcNOTES" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Примечания для расчетов</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<xs:complexType name="MVDCalcPosNameType">
+    <xs:annotation>
+        <xs:documentation>21. Другие платежи (указать) элементы</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="CalcPosName" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Должность (указать)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="30"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="Value" type="decimal_11_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Значение</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="Currency" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Валюта</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="3"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="CurrRate" type="decimal_8_6" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Курс</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="ValueNatCur" type="decimal_12_2" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Значение в национальной валюте</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<xs:complexType name="RiskAnalysisType">
+    <xs:annotation>
+        <xs:documentation>Элементы оценки риска</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="RiskGate" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Selektivitātes ceļš</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="30"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="EveTypSEL4">
+            <xs:annotation>
+                <xs:documentation>Значимость события</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="7">
+                        <xs:annotation>
+                            <xs:documentation>Регламент таможни ввоза</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="RisAnaCodITR3" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Код анализа риска</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="5"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="RisProSEL3" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Название профиля риска, которому соответствует результат анализа риска</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="25"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="IrisResponseDate" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Дата и время ответа IRIS или оценки риска вручную</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:dateTime"/>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="ManualRiskAnalysis" minOccurs="1">
+            <xs:annotation>
+                <xs:documentation>Анализ рисков, выполненный вручную или IRIS (0 - IRIS, 1 - вручную)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="FlagType"/>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="ItemRiskList" type="ItemRiskListType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Оценка товарного риска</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<xs:complexType name="ItemRiskListType">
+    <xs:annotation>
+        <xs:documentation>Тип списка оценки рисков по товарам</xs:documentation>
+    </xs:annotation>
+    <xs:sequence maxOccurs="unbounded">
+        <xs:element name="ItemRisk" type="ItemRiskType">
+            <xs:annotation>
+                <xs:documentation>Оценка риска по товарам</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<xs:complexType name="ItemRiskType">
+    <xs:annotation>
+        <xs:documentation>Элементы оценки риска по товарам</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="IteNumInvITR1">
+            <xs:annotation>
+                <xs:documentation>Серийный номер продукта</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                    <xs:totalDigits value="32"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="RisAnaCodITR3" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Код анализа риска</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="5"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="RiskGate">
+            <xs:annotation>
+                <xs:documentation>Selektivitātes ceļš precei</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="30"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<xs:complexType name="ControlResultType">
+    <xs:annotation>
+        <xs:documentation>Решение</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="ControlResultCode">
+            <xs:annotation>
+                <xs:documentation>Код решения</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="2"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="ControlResultText" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Описание результатов контроля</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<xs:complexType name="TaxRateType">
+    <xs:annotation>
+        <xs:documentation>47.3 Элементы налоговой ставки</xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+        <xs:element name="RateOfTaxB47F13Taric" type="TaxRateTaricType" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Налоговая ставка, возвращаемая ITVS</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="RateOfTaxB47F13Manual" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Ручной расчет ставки (вводится в произвольном тексте)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="100"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+    </xs:choice>
+</xs:complexType>
+<xs:complexType name="TaxRateTaricType">
+    <xs:annotation>
+        <xs:documentation>47.3 Элементы налоговой ставки, возвращаемой ITVS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="TaxRatTAXA4" type="decimal_8_4" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>47.3. Налоговая ставка</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="MeasureDefault" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Единица измерения</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="3"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="MeasAddCode" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Обозначение дополнительной единицы измерения</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="1"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="TaxCompDays" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Количество дней начисления вознаграждения. Заполните только возврат оплаты за вид оплаты</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                    <xs:totalDigits value="8"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="TaxRateCurrency" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Код валюты</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="3"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+<!--===Deklarācijas labošanas informācija=== -->
+<xs:complexType name="CorrectionType">
+    <xs:annotation>
+        <xs:documentation>Декларация о корректировке информации</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element ref="user" maxOccurs="1"/>
+        <xs:element ref="correctionDate" maxOccurs="1"/>
+    </xs:sequence>
+</xs:complexType>
+<xs:element name="user">
+    <xs:annotation>
+        <xs:documentation>Последние изменения в декларации</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="200"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:element>
+<xs:element name="correctionDate">
+    <xs:annotation>
+        <xs:documentation>Последняя дата и время исправления</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+        <xs:restriction base="xs:dateTime"/>
+    </xs:simpleType>
+</xs:element>
+<xs:simpleType name="FlagType">
+    <xs:restriction base="xs:integer">
+        <xs:enumeration value="0"/>
+        <xs:enumeration value="1"/>
+    </xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="TrdStaType">
+    <xs:restriction base="xs:integer">
+        <xs:enumeration value="1"/>
+        <xs:enumeration value="2"/>
+    </xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="decimal_18_2">
+    <xs:restriction base="xs:decimal">
+        <xs:maxInclusive value="999999999999999999.99"/>
+        <xs:minInclusive value="0"/>
+        <xs:fractionDigits value="2"/>
+    </xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="decimal_15_2">
+    <xs:restriction base="xs:decimal">
+        <xs:maxInclusive value="999999999999999.99"/>
+        <xs:minInclusive value="0"/>
+        <xs:fractionDigits value="2"/>
+    </xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="decimal_13_2">
+    <xs:restriction base="xs:decimal">
+        <xs:maxInclusive value="9999999999999.99"/>
+        <xs:minInclusive value="0"/>
+        <xs:fractionDigits value="2"/>
+    </xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="decimal_12_2">
+    <xs:restriction base="xs:decimal">
+        <xs:maxInclusive value="999999999999.99"/>
+        <xs:minInclusive value="0"/>
+        <xs:fractionDigits value="2"/>
+    </xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="decimal_12_2_negative">
+    <xs:restriction base="xs:decimal">
+        <xs:maxInclusive value="999999999999.99"/>
+        <xs:minInclusive value="-999999999999.99"/>
+        <xs:fractionDigits value="2"/>
+    </xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="decimal_11_3">
+    <xs:restriction base="xs:decimal">
+        <xs:maxInclusive value="99999999999.999"/>
+        <xs:minInclusive value="0"/>
+        <xs:fractionDigits value="3"/>
+    </xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="decimal_11_2">
+    <xs:restriction base="xs:decimal">
+        <xs:maxInclusive value="99999999999.99"/>
+        <xs:minInclusive value="0"/>
+        <xs:fractionDigits value="2"/>
+    </xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="decimal_9_2">
+    <xs:restriction base="xs:decimal">
+        <xs:maxInclusive value="999999999.99"/>
+        <xs:minInclusive value="0"/>
+        <xs:fractionDigits value="2"/>
+    </xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="decimal_8_6">
+    <xs:restriction base="xs:decimal">
+        <xs:maxInclusive value="99999999.999999"/>
+        <xs:minInclusive value="0"/>
+        <xs:fractionDigits value="6"/>
+    </xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="decimal_8_4">
+    <xs:restriction base="xs:decimal">
+        <xs:maxInclusive value="99999999.9999"/>
+        <xs:minInclusive value="0"/>
+        <xs:fractionDigits value="4"/>
+    </xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="decimal_8_3">
+    <xs:restriction base="xs:decimal">
+        <xs:maxInclusive value="99999999.999"/>
+        <xs:minInclusive value="0"/>
+        <xs:fractionDigits value="3"/>
+    </xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="decimal_4_4">
+    <xs:restriction base="xs:decimal">
+        <xs:maxInclusive value="9999.9999"/>
+        <xs:minInclusive value="0"/>
+        <xs:fractionDigits value="4"/>
+    </xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="decimal_2_6">
+    <xs:restriction base="xs:decimal">
+        <xs:maxInclusive value="99.999999"/>
+        <xs:minInclusive value="0"/>
+        <xs:fractionDigits value="6"/>
+    </xs:restriction>
+</xs:simpleType>
+</xs:schema> 

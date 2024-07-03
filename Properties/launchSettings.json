@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ConverterApp": {
+      "commandName": "Project",
+      "commandLineArgs": "RootLV.xml"
+    }
+  }
+}

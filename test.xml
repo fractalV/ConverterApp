@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ED_Container
+DocumentModeID="1006058E"
+xmlns="urn:customs.ru:Information:ExchangeDocuments:ED_Container:5.13.1"
+xmlns:cat_ru="urn:customs.ru:CommonAggregateTypes:5.10.0"
+xmlns:clt_ru="urn:customs.ru:CommonLeafTypes:5.10.0"
+>
+  <cat_ru:DocumentID>38F6CE80-AC4F-4D4A-A127-0008800DE177</cat_ru:DocumentID>
+  <FullSetIndicator>1</FullSetIndicator>
+  <ContainerDoc>
+    <DocBody>
+
+      <ESADout_CU DocumentModeID="1006107E" xmlns="urn:customs.ru:Information:CustomsDocuments:ESADout_CU:5.14.0" xmlns:clt_ru="urn:customs.ru:CommonLeafTypes:5.10.0" xmlns:cat_ru="urn:customs.ru:CommonAggregateTypes:5.10.0" xmlns:catESAD_cu="urn:customs.ru:CUESADCommonAggregateTypesCust:5.14.0" xmlns:cltESAD_cu="urn:customs.ru:CUESADCommonLeafTypes:5.12.0" xmlns:RUSclt_ru="urn:customs.ru:RUSCommonLeafTypes:5.14.0" xmlns:RUScat_ru="urn:customs.ru:RUSCommonAggregateTypes:5.14.0" xmlns:RUDECLcat="urn:customs.ru:RUDeclCommonAggregateTypesCust:5.14.0" >
+        <cat_ru:DocumentID>8F09F4A3-A7CB-4A8C-AB02-7A7890FE4C88</cat_ru:DocumentID>
+        <EECEDocHeaderAddInfo>
+          <RUScat_ru:EDocCode>R.036</RUScat_ru:EDocCode>
+          <RUScat_ru:EDocDateTime>2019-02-14T00:00:00+03:00</RUScat_ru:EDocDateTime>
+        </EECEDocHeaderAddInfo>
+        <CustomsProcedure>ИМ</CustomsProcedure>
+        <CustomsModeCode>40</CustomsModeCode>
+        <ElectronicDocumentSign>ЭД</ElectronicDocumentSign>
+        <RecipientCountryCode>RU</RecipientCountryCode>
+        <ExecutionPlace>ВЛАДИВОСТОК</ExecutionPlace>
+        <ESADout_CUGoodsShipment>
+          <catESAD_cu:OriginCountryName>ЭКВАДОР</catESAD_cu:OriginCountryName>
+          <catESAD_cu:OriginCountryCode>EC</catESAD_cu:OriginCountryCode>
+          <catESAD_cu:TotalGoodsNumber>1</catESAD_cu:TotalGoodsNumber>
+          <catESAD_cu:TotalPackageNumber>4320</catESAD_cu:TotalPackageNumber>
+          <catESAD_cu:TotalSheetNumber>1</catESAD_cu:TotalSheetNumber>
+          <catESAD_cu:TotalCustCost>4182183.97</catESAD_cu:TotalCustCost>
+          <catESAD_cu:CustCostCurrencyCode>RUB</catESAD_cu:CustCostCurrencyCode>
+          <ESADout_CUConsignor>
+            <cat_ru:OrganizationName>UNION DE BANANEROS ECUATORIANOS S.A.</cat_ru:OrganizationName>
+            <RUScat_ru:SubjectAddressDetails>
+              <RUScat_ru:CountryCode>EC</RUScat_ru:CountryCode>
+              <RUScat_ru:CounryName>ЭКВАДОР</RUScat_ru:CounryName>
+              <RUScat_ru:City>AVE.LAS MONJAS#10 Y CARLOS JULIO</RUScat_ru:City>
+              <RUScat_ru:StreetHouse>AROSEMENA PH:593 4 2 204850, GUAYAQUIL</RUScat_ru:StreetHouse>
+            </RUScat_ru:SubjectAddressDetails>
+          </ESADout_CUConsignor>
+          <ESADout_CUConsignee>
+            <RUDECLcat:EqualIndicator>1</RUDECLcat:EqualIndicator>
+          </ESADout_CUConsignee>
+          <ESADout_CUFinancialAdjustingResponsiblePerson>
+            <DeclarantEqualFlag>1</DeclarantEqualFlag>
+          </ESADout_CUFinancialAdjustingResponsiblePerson>
+          <ESADout_CUDeclarant>
+            <cat_ru:OrganizationName>ООО"МАНЗАНО"</cat_ru:OrganizationName>
+            <cat_ru:RFOrganizationFeatures>
+              <cat_ru:OGRN>1182536009809</cat_ru:OGRN>
+              <cat_ru:INN>2543123721</cat_ru:INN>
+              <cat_ru:KPP>254301001</cat_ru:KPP>
+            </cat_ru:RFOrganizationFeatures>
+            <RUScat_ru:SubjectAddressDetails>
+              <RUScat_ru:PostalCode>690054</RUScat_ru:PostalCode>
+              <RUScat_ru:CountryCode>RU</RUScat_ru:CountryCode>
+              <RUScat_ru:CounryName>РОССИЯ</RUScat_ru:CounryName>
+              <RUScat_ru:Region>ПРИМОРСКИЙ КРАЙ</RUScat_ru:Region>
+              <RUScat_ru:City>Г.ВЛАДИВОСТОК</RUScat_ru:City>
+              <RUScat_ru:StreetHouse>УЛ. ШОССЕЙНАЯ 2-Я , Д.3А,ОФИС 301</RUScat_ru:StreetHouse>
+            </RUScat_ru:SubjectAddressDetails>
+          </ESADout_CUDeclarant>
+          <ESADout_CUGoodsLocation>
+            <InformationTypeCode>99</InformationTypeCode>
+            <CustomsOffice>10702030</CustomsOffice>
+            <CustomsCountryCode>RU</CustomsCountryCode>
+            <GoodsLocationWarehouse>
+              <cat_ru:PrDocumentNumber>10702/281218/00072/6</cat_ru:PrDocumentNumber>
+              <cat_ru:PrDocumentDate>2019-01-10</cat_ru:PrDocumentDate>
+            </GoodsLocationWarehouse>
+            <Address>
+              <RUScat_ru:CountryCode>RU</RUScat_ru:CountryCode>
+              <RUScat_ru:CounryName>РОССИЯ</RUScat_ru:CounryName>
+              <RUScat_ru:Region>ПРИМОРСКИЙ КРАЙ</RUScat_ru:Region>
+              <RUScat_ru:City>Г.ВЛАДИВОСТОК</RUScat_ru:City>
+              <RUScat_ru:StreetHouse>"ПЗТК ПАО ВМТП" УЛ.СТРЕЛЬНИКОВА,9</RUScat_ru:StreetHouse>
+            </Address>
+          </ESADout_CUGoodsLocation>
+          <ESADout_CUConsigment>
+            <catESAD_cu:ContainerIndicator>true</catESAD_cu:ContainerIndicator>
+            <catESAD_cu:DispatchCountryCode>EC</catESAD_cu:DispatchCountryCode>
+            <catESAD_cu:DispatchCountryName>ЭКВАДОР</catESAD_cu:DispatchCountryName>
+            <catESAD_cu:DestinationCountryCode>RU</catESAD_cu:DestinationCountryCode>
+            <catESAD_cu:DestinationCountryName>РОССИЯ</catESAD_cu:DestinationCountryName>
+            <catESAD_cu:BorderCustomsOffice>
+              <cat_ru:Code>10702030</cat_ru:Code>
+              <cat_ru:OfficeName>Т/П МОРСКОЙ ПОРТ ВЛАДИВОСТОК</cat_ru:OfficeName>
+              <cat_ru:CustomsCountryCode>643</cat_ru:CustomsCountryCode>
+            </catESAD_cu:BorderCustomsOffice>
+            <ESADout_CUBorderTransport>
+              <cat_ru:TransportModeCode>10</cat_ru:TransportModeCode>
+              <cat_ru:TransportNationalityCode>LR</cat_ru:TransportNationalityCode>
+              <TransportMeansQuantity>1</TransportMeansQuantity>
+              <TransportMeans>
+                <cat_ru:TransportKindCode>10_</cat_ru:TransportKindCode>
+                <cat_ru:TransportIdentifier>"NORTHERN DEFENDER"</cat_ru:TransportIdentifier>
+                <cat_ru:TransportMeansNationalityCode>LR</cat_ru:TransportMeansNationalityCode>
+              </TransportMeans>
+            </ESADout_CUBorderTransport>
+          </ESADout_CUConsigment>
+          <ESADout_CUMainContractTerms>
+            <catESAD_cu:ContractCurrencyCode>USD</catESAD_cu:ContractCurrencyCode>
+            <catESAD_cu:ContractCurrencyRate>65.6783</catESAD_cu:ContractCurrencyRate>
+            <catESAD_cu:TotalInvoiceAmount>63676.80</catESAD_cu:TotalInvoiceAmount>
+            <catESAD_cu:TradeCountryCode>EC</catESAD_cu:TradeCountryCode>
+            <catESAD_cu:DealFeatureCode>00</catESAD_cu:DealFeatureCode>
+            <catESAD_cu:DealNatureCode>010</catESAD_cu:DealNatureCode>
+            <catESAD_cu:CUESADDeliveryTerms>
+              <cat_ru:DeliveryPlace>ВЛАДИВОСТОК</cat_ru:DeliveryPlace>
+              <cat_ru:DeliveryTermsStringCode>CFR</cat_ru:DeliveryTermsStringCode>
+            </catESAD_cu:CUESADDeliveryTerms>
+          </ESADout_CUMainContractTerms>
+          <ESADout_CUGoods>
+            <catESAD_cu:GoodsNumeric>1</catESAD_cu:GoodsNumeric>
+            <catESAD_cu:GoodsDescription>СВЕЖИЕ БАНАНЫ,СОРТ КАВЕНДИШ 4320 КОР.</catESAD_cu:GoodsDescription>
+            <catESAD_cu:GrossWeightQuantity>90288.000</catESAD_cu:GrossWeightQuantity>
+            <catESAD_cu:NetWeightQuantity>83808.000</catESAD_cu:NetWeightQuantity>
+            <catESAD_cu:InvoicedCost>63676.80</catESAD_cu:InvoicedCost>
+            <catESAD_cu:CustomsCost>4182183.97</catESAD_cu:CustomsCost>
+            <catESAD_cu:StatisticalCost>63676.80</catESAD_cu:StatisticalCost>
+            <catESAD_cu:GoodsTNVEDCode>0803901000</catESAD_cu:GoodsTNVEDCode>
+            <catESAD_cu:OriginCountryCode>EC</catESAD_cu:OriginCountryCode>
+            <catESAD_cu:CustomsCostCorrectMethod>1</catESAD_cu:CustomsCostCorrectMethod>
+            <catESAD_cu:AdditionalSheetCount>1</catESAD_cu:AdditionalSheetCount>
+            <catESAD_cu:GoodsGroupDescription>
+              <catESAD_cu:GoodsDescription>:</catESAD_cu:GoodsDescription>
+              <catESAD_cu:GoodsGroupInformation>
+                <catESAD_cu:Manufacturer>"UNION DE BANANEROS ECUATORIANOS S.A." ("ЮНИОН ДЕ БАНАНЕРОС ЭКУАТОРИАНОС С.А.")</catESAD_cu:Manufacturer>
+                <catESAD_cu:TradeMark>DOLE</catESAD_cu:TradeMark>
+                <catESAD_cu:LineNum>1</catESAD_cu:LineNum>
+              </catESAD_cu:GoodsGroupInformation>
+              <catESAD_cu:GroupNum>1</catESAD_cu:GroupNum>
+            </catESAD_cu:GoodsGroupDescription>
+            <catESAD_cu:Preferencii>
+              <catESAD_cu:CustomsTax>ОО</catESAD_cu:CustomsTax>
+              <catESAD_cu:CustomsDuty>ГГ</catESAD_cu:CustomsDuty>
+              <catESAD_cu:Excise>-</catESAD_cu:Excise>
+              <catESAD_cu:Rate>ОО</catESAD_cu:Rate>
+            </catESAD_cu:Preferencii>
+            <ESADout_CUPresentedDocument>
+              <cat_ru:PrDocumentName>СЕРТИФИКАТ/ДЕКЛАРАЦИЯ СООТВЕТСТВИЯ/ОТС</cat_ru:PrDocumentName>
+              <cat_ru:PrDocumentNumber>ЕАЭС N RU Д-EC.ПР53.В.00222/19</cat_ru:PrDocumentNumber>
+              <cat_ru:PrDocumentDate>2019-02-06</cat_ru:PrDocumentDate>
+              <catESAD_cu:PresentedDocumentModeCode>01191</catESAD_cu:PresentedDocumentModeCode>
+              <catESAD_cu:DocumentBeginActionsDate>2019-02-06</catESAD_cu:DocumentBeginActionsDate>
+              <catESAD_cu:DocumentEndActionsDate>2020-02-06</catESAD_cu:DocumentEndActionsDate>
+              <RUDECLcat:DocumentPresentingDetails>
+                <RUDECLcat:DocPresentKindCode>0</RUDECLcat:DocPresentKindCode>
+              </RUDECLcat:DocumentPresentingDetails>
+            </ESADout_CUPresentedDocument>
+            <ESADout_CUPresentedDocument>
+              <cat_ru:PrDocumentName>КОНОСАМЕНТ</cat_ru:PrDocumentName>
+              <cat_ru:PrDocumentNumber>MAEU580165784</cat_ru:PrDocumentNumber>
+              <cat_ru:PrDocumentDate>2019-01-07</cat_ru:PrDocumentDate>
+              <catESAD_cu:PresentedDocumentModeCode>02011</catESAD_cu:PresentedDocumentModeCode>
+              <RUDECLcat:DocumentPresentingDetails>
+                <RUDECLcat:DocPresentKindCode>0</RUDECLcat:DocPresentKindCode>
+              </RUDECLcat:DocumentPresentingDetails>
+            </ESADout_CUPresentedDocument>
+            <ESADout_CUPresentedDocument>
+              <cat_ru:PrDocumentName>КОНОСАМЕНТ</cat_ru:PrDocumentName>
+              <cat_ru:PrDocumentNumber>MLVLV580165784</cat_ru:PrDocumentNumber>
+              <cat_ru:PrDocumentDate>2019-01-17</cat_ru:PrDocumentDate>
+              <catESAD_cu:PresentedDocumentModeCode>02011</catESAD_cu:PresentedDocumentModeCode>
+              <RUDECLcat:DocumentPresentingDetails>
+                <RUDECLcat:DocPresentKindCode>0</RUDECLcat:DocPresentKindCode>
+              </RUDECLcat:DocumentPresentingDetails>
+            </ESADout_CUPresentedDocument>
+            <ESADout_CUPresentedDocument>
+              <cat_ru:PrDocumentName>УЧРЕДИТЕЛЬНЫЕ ДОКУМЕНТЫ</cat_ru:PrDocumentName>
+              <cat_ru:PrDocumentNumber>Б/Н</cat_ru:PrDocumentNumber>
+              <cat_ru:PrDocumentDate>2018-03-27</cat_ru:PrDocumentDate>
+              <catESAD_cu:PresentedDocumentModeCode>04011</catESAD_cu:PresentedDocumentModeCode>
+              <RUDECLcat:DocumentPresentingDetails>
+                <RUDECLcat:DocPresentKindCode>0</RUDECLcat:DocPresentKindCode>
+              </RUDECLcat:DocumentPresentingDetails>
+            </ESADout_CUPresentedDocument>
+            <ESADout_CUPresentedDocument>
+              <cat_ru:PrDocumentName>ОТГРУЗОЧНЫЙ (УПАКОВОЧНЫЙ) ЛИСТ</cat_ru:PrDocumentName>
+              <cat_ru:PrDocumentNumber>Б/ Н</cat_ru:PrDocumentNumber>
+              <cat_ru:PrDocumentDate>2019-01-07</cat_ru:PrDocumentDate>
+              <catESAD_cu:PresentedDocumentModeCode>04131</catESAD_cu:PresentedDocumentModeCode>
+              <RUDECLcat:DocumentPresentingDetails>
+                <RUDECLcat:DocPresentKindCode>0</RUDECLcat:DocPresentKindCode>
+              </RUDECLcat:DocumentPresentingDetails>
+            </ESADout_CUPresentedDocument>
+            <ESADout_CUPresentedDocument>
+              <cat_ru:PrDocumentName>ИНЫЕ ГРАФИЧЕСКИЕ МАТЕРИАЛЫ</cat_ru:PrDocumentName>
+              <cat_ru:PrDocumentNumber>1182536009809</cat_ru:PrDocumentNumber>
+              <cat_ru:PrDocumentDate>2019-01-31</cat_ru:PrDocumentDate>
+              <catESAD_cu:PresentedDocumentModeCode>09023</catESAD_cu:PresentedDocumentModeCode>
+              <RUDECLcat:DocumentPresentingDetails>
+                <RUDECLcat:DocPresentKindCode>0</RUDECLcat:DocPresentKindCode>
+              </RUDECLcat:DocumentPresentingDetails>
+            </ESADout_CUPresentedDocument>
+            <ESADout_CUPresentedDocument>
+              <cat_ru:PrDocumentName>ИНЫЕ ДОКУМЕНТЫ</cat_ru:PrDocumentName>
+              <cat_ru:PrDocumentNumber>2543123721</cat_ru:PrDocumentNumber>
+              <cat_ru:PrDocumentDate>2018-04-02</cat_ru:PrDocumentDate>
+              <catESAD_cu:PresentedDocumentModeCode>09999</catESAD_cu:PresentedDocumentModeCode>
+              <RUDECLcat:DocumentPresentingDetails>
+                <RUDECLcat:DocPresentKindCode>0</RUDECLcat:DocPresentKindCode>
+              </RUDECLcat:DocumentPresentingDetails>
+            </ESADout_CUPresentedDocument>
+            <ESADout_CUPresentedDocument>
+              <cat_ru:PrDocumentName>ИНЫЕ ДОКУМЕНТЫ</cat_ru:PrDocumentName>
+              <cat_ru:PrDocumentNumber>1</cat_ru:PrDocumentNumber>
+              <cat_ru:PrDocumentDate>2019-01-22</cat_ru:PrDocumentDate>
+              <catESAD_cu:PresentedDocumentModeCode>09999</catESAD_cu:PresentedDocumentModeCode>
+              <RUDECLcat:DocumentPresentingDetails>
+                <RUDECLcat:DocPresentKindCode>0</RUDECLcat:DocPresentKindCode>
+              </RUDECLcat:DocumentPresentingDetails>
+            </ESADout_CUPresentedDocument>
+            <ESADout_CUPresentedDocument>
+              <cat_ru:PrDocumentName>ИНЫЕ СВЕДЕНИЯ</cat_ru:PrDocumentName>
+              <cat_ru:PrDocumentNumber>Б/Н</cat_ru:PrDocumentNumber>
+              <cat_ru:PrDocumentDate>2019-01-22</cat_ru:PrDocumentDate>
+              <catESAD_cu:PresentedDocumentModeCode>10023</catESAD_cu:PresentedDocumentModeCode>
+              <RUDECLcat:DocumentPresentingDetails>
+                <RUDECLcat:DocPresentKindCode>0</RUDECLcat:DocPresentKindCode>
+              </RUDECLcat:DocumentPresentingDetails>
+            </ESADout_CUPresentedDocument>
+            <ESADout_CUPresentedDocument>
+              <cat_ru:PrDocumentName>ВОЗМЕЗДНЫЙ ДОГОВОР</cat_ru:PrDocumentName>
+              <cat_ru:PrDocumentNumber>Е-5</cat_ru:PrDocumentNumber>
+              <cat_ru:PrDocumentDate>2018-12-05</cat_ru:PrDocumentDate>
+              <catESAD_cu:PresentedDocumentModeCode>03011</catESAD_cu:PresentedDocumentModeCode>
+              <RUDECLcat:DocumentPresentingDetails>
+                <RUDECLcat:DocPresentKindCode>1</RUDECLcat:DocPresentKindCode>
+              </RUDECLcat:DocumentPresentingDetails>
+            </ESADout_CUPresentedDocument>
+            <ESADout_CUPresentedDocument>
+              <cat_ru:PrDocumentName>ДОПОЛНЕНИЕ К ДОГОВОРУ</cat_ru:PrDocumentName>
+              <cat_ru:PrDocumentNumber>ПРИЛОЖЕНИЕ №030-001-000011415</cat_ru:PrDocumentNumber>
+              <cat_ru:PrDocumentDate>2019-01-07</cat_ru:PrDocumentDate>
+              <catESAD_cu:PresentedDocumentModeCode>03012</catESAD_cu:PresentedDocumentModeCode>
+              <RUDECLcat:DocumentPresentingDetails>
+                <RUDECLcat:DocPresentKindCode>0</RUDECLcat:DocPresentKindCode>
+              </RUDECLcat:DocumentPresentingDetails>
+            </ESADout_CUPresentedDocument>
+            <ESADout_CUPresentedDocument>
+              <cat_ru:PrDocumentName>ДОКУМЕНТ ПО ВАЛЮТНОМУ КОНТРОЛЮ</cat_ru:PrDocumentName>
+              <cat_ru:PrDocumentNumber>18120025/1326/0020/2/1</cat_ru:PrDocumentNumber>
+              <cat_ru:PrDocumentDate>2019-12-12</cat_ru:PrDocumentDate>
+              <catESAD_cu:PresentedDocumentModeCode>03031</catESAD_cu:PresentedDocumentModeCode>
+              <RUDECLcat:DocumentPresentingDetails>
+                <RUDECLcat:DocPresentKindCode>0</RUDECLcat:DocPresentKindCode>
+              </RUDECLcat:DocumentPresentingDetails>
+            </ESADout_CUPresentedDocument>
+            <ESADout_CUPresentedDocument>
+              <cat_ru:PrDocumentName>ИНВОЙС (СЧЕТ-ФАКТУРА) К ДОГОВОРУ</cat_ru:PrDocumentName>
+              <cat_ru:PrDocumentNumber>030-001-000011415</cat_ru:PrDocumentNumber>
+              <cat_ru:PrDocumentDate>2019-01-07</cat_ru:PrDocumentDate>
+              <catESAD_cu:PresentedDocumentModeCode>04021</catESAD_cu:PresentedDocumentModeCode>
+              <RUDECLcat:DocumentPresentingDetails>
+                <RUDECLcat:DocPresentKindCode>0</RUDECLcat:DocPresentKindCode>
+              </RUDECLcat:DocumentPresentingDetails>
+            </ESADout_CUPresentedDocument>
+            <ESADout_CUPresentedDocument>
+              <cat_ru:PrDocumentName>ДЕКЛАРАЦИЯ-СЕРТИФИКАТ ПРОИСХОЖДЕНИЯ ФОРМЫ "А"</cat_ru:PrDocumentName>
+              <cat_ru:PrDocumentNumber>16910174201900000410P</cat_ru:PrDocumentNumber>
+              <cat_ru:PrDocumentDate>2019-01-10</cat_ru:PrDocumentDate>
+              <catESAD_cu:PresentedDocumentModeCode>06013</catESAD_cu:PresentedDocumentModeCode>
+              <catESAD_cu:CountryCode>EC</catESAD_cu:CountryCode>
+              <RUDECLcat:DocumentPresentingDetails>
+                <RUDECLcat:DocPresentKindCode>0</RUDECLcat:DocPresentKindCode>
+              </RUDECLcat:DocumentPresentingDetails>
+            </ESADout_CUPresentedDocument>
+            <ESADout_CUPresentedDocument>
+              <cat_ru:PrDocumentName>ДОКУМЕНТЫ ПО ЛЬГОТАМ НА ПЛАТЕЖИ, ПОШЛИНЫ, НАЛОГИ</cat_ru:PrDocumentName>
+              <cat_ru:PrDocumentNumber>130 (П.3)</cat_ru:PrDocumentNumber>
+              <cat_ru:PrDocumentDate>2009-11-27</cat_ru:PrDocumentDate>
+              <catESAD_cu:PresentedDocumentModeCode>07011</catESAD_cu:PresentedDocumentModeCode>
+              <catESAD_cu:CustomsPaymentModeCodeType>2010</catESAD_cu:CustomsPaymentModeCodeType>
+              <RUDECLcat:DocumentPresentingDetails>
+                <RUDECLcat:DocPresentKindCode>0</RUDECLcat:DocPresentKindCode>
+              </RUDECLcat:DocumentPresentingDetails>
+            </ESADout_CUPresentedDocument>
+            <ESADout_CUPresentedDocument>
+              <cat_ru:PrDocumentName>ДОКУМЕНТЫ ПО ЛЬГОТАМ НА ПЛАТЕЖИ, ПОШЛИНЫ, НАЛОГИ</cat_ru:PrDocumentName>
+              <cat_ru:PrDocumentNumber>ЕЭК (СТ.36)</cat_ru:PrDocumentNumber>
+              <cat_ru:PrDocumentDate>2014-05-29</cat_ru:PrDocumentDate>
+              <catESAD_cu:PresentedDocumentModeCode>07011</catESAD_cu:PresentedDocumentModeCode>
+              <catESAD_cu:CustomsPaymentModeCodeType>2010</catESAD_cu:CustomsPaymentModeCodeType>
+              <RUDECLcat:DocumentPresentingDetails>
+                <RUDECLcat:DocPresentKindCode>0</RUDECLcat:DocPresentKindCode>
+              </RUDECLcat:DocumentPresentingDetails>
+            </ESADout_CUPresentedDocument>
+            <ESADout_CUPresentedDocument>
+              <cat_ru:PrDocumentName>ОТМЕТКИ НА КОНОСАМЕТЕ</cat_ru:PrDocumentName>
+              <cat_ru:PrDocumentNumber>MLVLV580165784</cat_ru:PrDocumentNumber>
+              <cat_ru:PrDocumentDate>2019-02-15</cat_ru:PrDocumentDate>
+              <catESAD_cu:PresentedDocumentModeCode>10023</catESAD_cu:PresentedDocumentModeCode>
+              <RUDECLcat:DocumentPresentingDetails>
+                <RUDECLcat:DocPresentKindCode>0</RUDECLcat:DocPresentKindCode>
+              </RUDECLcat:DocumentPresentingDetails>
+            </ESADout_CUPresentedDocument>
+            <ESADout_CUPresentedDocument>
+              <cat_ru:PrDocumentName>ИНЫЕ ГРАФИЧЕСКИЕ МАТЕРИАЛЫ</cat_ru:PrDocumentName>
+              <cat_ru:PrDocumentNumber>MLVLV580165784</cat_ru:PrDocumentNumber>
+              <cat_ru:PrDocumentDate>2019-01-17</cat_ru:PrDocumentDate>
+              <catESAD_cu:PresentedDocumentModeCode>09023</catESAD_cu:PresentedDocumentModeCode>
+              <RUDECLcat:DocumentPresentingDetails>
+                <RUDECLcat:DocPresentKindCode>0</RUDECLcat:DocPresentKindCode>
+              </RUDECLcat:DocumentPresentingDetails>
+            </ESADout_CUPresentedDocument>
+            <ESADout_CUCustomsPaymentCalculation>
+              <catESAD_cu:PaymentModeCode>1010</catESAD_cu:PaymentModeCode>
+              <catESAD_cu:PaymentAmount>5625.00</catESAD_cu:PaymentAmount>
+              <catESAD_cu:PaymentCurrencyCode>643</catESAD_cu:PaymentCurrencyCode>
+              <catESAD_cu:TaxBase>4182183.97</catESAD_cu:TaxBase>
+              <catESAD_cu:TaxBaseCurrencyCode>643</catESAD_cu:TaxBaseCurrencyCode>
+              <catESAD_cu:Rate>5625.00</catESAD_cu:Rate>
+              <catESAD_cu:RateTypeCode>*</catESAD_cu:RateTypeCode>
+              <catESAD_cu:RateCurrencyCode>643</catESAD_cu:RateCurrencyCode>
+              <catESAD_cu:RateUseDate>2019-02-14</catESAD_cu:RateUseDate>
+              <catESAD_cu:PaymentCode>ИУ</catESAD_cu:PaymentCode>
+            </ESADout_CUCustomsPaymentCalculation>
+            <ESADout_CUCustomsPaymentCalculation>
+              <catESAD_cu:PaymentModeCode>2010</catESAD_cu:PaymentModeCode>
+              <catESAD_cu:PaymentAmount>167287.36</catESAD_cu:PaymentAmount>
+              <catESAD_cu:PaymentCurrencyCode>643</catESAD_cu:PaymentCurrencyCode>
+              <catESAD_cu:TaxBase>4182183.97</catESAD_cu:TaxBase>
+              <catESAD_cu:TaxBaseCurrencyCode>643</catESAD_cu:TaxBaseCurrencyCode>
+              <catESAD_cu:Rate>4.00</catESAD_cu:Rate>
+              <catESAD_cu:RateTypeCode>%</catESAD_cu:RateTypeCode>
+              <catESAD_cu:ComparisonOperationsSign>1</catESAD_cu:ComparisonOperationsSign>
+              <catESAD_cu:Rate2>0.015</catESAD_cu:Rate2>
+              <catESAD_cu:RateTypeCode2>*</catESAD_cu:RateTypeCode2>
+              <catESAD_cu:RateCurrencyCode2>978</catESAD_cu:RateCurrencyCode2>
+              <catESAD_cu:RateTNVEDQualifierCode2>166</catESAD_cu:RateTNVEDQualifierCode2>
+              <catESAD_cu:ComparisonResult>true</catESAD_cu:ComparisonResult>
+              <catESAD_cu:RateUseDate>2019-02-14</catESAD_cu:RateUseDate>
+              <catESAD_cu:PaymentCode>УН</catESAD_cu:PaymentCode>
+            </ESADout_CUCustomsPaymentCalculation>
+            <ESADout_CUCustomsPaymentCalculation>
+              <catESAD_cu:PaymentModeCode>2010</catESAD_cu:PaymentModeCode>
+              <catESAD_cu:PaymentAmount>125465.52</catESAD_cu:PaymentAmount>
+              <catESAD_cu:PaymentCurrencyCode>643</catESAD_cu:PaymentCurrencyCode>
+              <catESAD_cu:TaxBase>4182183.97</catESAD_cu:TaxBase>
+              <catESAD_cu:TaxBaseCurrencyCode>643</catESAD_cu:TaxBaseCurrencyCode>
+              <catESAD_cu:Rate>3.00</catESAD_cu:Rate>
+              <catESAD_cu:RateTypeCode>%</catESAD_cu:RateTypeCode>
+              <catESAD_cu:ComparisonOperationsSign>1</catESAD_cu:ComparisonOperationsSign>
+              <catESAD_cu:Rate2>0.01125</catESAD_cu:Rate2>
+              <catESAD_cu:RateTypeCode2>*</catESAD_cu:RateTypeCode2>
+              <catESAD_cu:RateCurrencyCode2>978</catESAD_cu:RateCurrencyCode2>
+              <catESAD_cu:RateTNVEDQualifierCode2>166</catESAD_cu:RateTNVEDQualifierCode2>
+              <catESAD_cu:ComparisonResult>true</catESAD_cu:ComparisonResult>
+              <catESAD_cu:RateUseDate>2019-02-14</catESAD_cu:RateUseDate>
+              <catESAD_cu:PaymentCode>УМ</catESAD_cu:PaymentCode>
+            </ESADout_CUCustomsPaymentCalculation>
+            <ESADout_CUCustomsPaymentCalculation>
+              <catESAD_cu:PaymentModeCode>5010</catESAD_cu:PaymentModeCode>
+              <catESAD_cu:PaymentAmount>861529.90</catESAD_cu:PaymentAmount>
+              <catESAD_cu:PaymentCurrencyCode>643</catESAD_cu:PaymentCurrencyCode>
+              <catESAD_cu:TaxBase>4307649.49</catESAD_cu:TaxBase>
+              <catESAD_cu:TaxBaseCurrencyCode>643</catESAD_cu:TaxBaseCurrencyCode>
+              <catESAD_cu:Rate>20.00</catESAD_cu:Rate>
+              <catESAD_cu:RateTypeCode>%</catESAD_cu:RateTypeCode>
+              <catESAD_cu:RateUseDate>2019-02-14</catESAD_cu:RateUseDate>
+              <catESAD_cu:PaymentCode>ИУ</catESAD_cu:PaymentCode>
+            </ESADout_CUCustomsPaymentCalculation>
+            <ESADGoodsPackaging>
+              <catESAD_cu:PakageQuantity>4320</catESAD_cu:PakageQuantity>
+              <catESAD_cu:PakageTypeCode>1</catESAD_cu:PakageTypeCode>
+              <catESAD_cu:PackagePalleteInformation>
+                <catESAD_cu:InfoKindCode>0</catESAD_cu:InfoKindCode>
+                <catESAD_cu:PalleteCode>BX</catESAD_cu:PalleteCode>
+                <catESAD_cu:PalleteQuantity>4320</catESAD_cu:PalleteQuantity>
+              </catESAD_cu:PackagePalleteInformation>
+            </ESADGoodsPackaging>
+            <ESADContainer>
+              <catESAD_cu:ContainerQuantity>4</catESAD_cu:ContainerQuantity>
+              <catESAD_cu:ContainerKind>CN</catESAD_cu:ContainerKind>
+              <catESAD_cu:ContainerNumber>
+                <catESAD_cu:ContainerIdentificaror>MNBU3318180</catESAD_cu:ContainerIdentificaror>
+                <catESAD_cu:FullIndicator>1</catESAD_cu:FullIndicator>
+              </catESAD_cu:ContainerNumber>
+              <catESAD_cu:ContainerNumber>
+                <catESAD_cu:ContainerIdentificaror>MNBU3065246</catESAD_cu:ContainerIdentificaror>
+                <catESAD_cu:FullIndicator>1</catESAD_cu:FullIndicator>
+              </catESAD_cu:ContainerNumber>
+              <catESAD_cu:ContainerNumber>
+                <catESAD_cu:ContainerIdentificaror>MNBU3273018</catESAD_cu:ContainerIdentificaror>
+                <catESAD_cu:FullIndicator>1</catESAD_cu:FullIndicator>
+              </catESAD_cu:ContainerNumber>
+              <catESAD_cu:ContainerNumber>
+                <catESAD_cu:ContainerIdentificaror>MNBU0245223</catESAD_cu:ContainerIdentificaror>
+                <catESAD_cu:FullIndicator>1</catESAD_cu:FullIndicator>
+              </catESAD_cu:ContainerNumber>
+            </ESADContainer>
+            <ESADCustomsProcedure>
+              <catESAD_cu:MainCustomsModeCode>40</catESAD_cu:MainCustomsModeCode>
+              <catESAD_cu:PrecedingCustomsModeCode>00</catESAD_cu:PrecedingCustomsModeCode>
+              <catESAD_cu:GoodsTransferFeature>000</catESAD_cu:GoodsTransferFeature>
+            </ESADCustomsProcedure>
+          </ESADout_CUGoods>
+          <ESADout_CUPayments>
+            <ESADout_CUCustomsPayment>
+              <catESAD_cu:PaymentModeCode>1010</catESAD_cu:PaymentModeCode>
+              <catESAD_cu:PaymentAmount>5625.00</catESAD_cu:PaymentAmount>
+              <catESAD_cu:PaymentCurrencyCode>643</catESAD_cu:PaymentCurrencyCode>
+              <RFOrganizationFeatures>
+                <cat_ru:INN>2543123721</cat_ru:INN>
+              </RFOrganizationFeatures>
+            </ESADout_CUCustomsPayment>
+            <ESADout_CUCustomsPayment>
+              <catESAD_cu:PaymentModeCode>2010</catESAD_cu:PaymentModeCode>
+              <catESAD_cu:PaymentAmount>125465.52</catESAD_cu:PaymentAmount>
+              <catESAD_cu:PaymentCurrencyCode>643</catESAD_cu:PaymentCurrencyCode>
+              <RFOrganizationFeatures>
+                <cat_ru:INN>2543123721</cat_ru:INN>
+              </RFOrganizationFeatures>
+            </ESADout_CUCustomsPayment>
+            <ESADout_CUCustomsPayment>
+              <catESAD_cu:PaymentModeCode>5010</catESAD_cu:PaymentModeCode>
+              <catESAD_cu:PaymentAmount>861529.90</catESAD_cu:PaymentAmount>
+              <catESAD_cu:PaymentCurrencyCode>643</catESAD_cu:PaymentCurrencyCode>
+              <RFOrganizationFeatures>
+                <cat_ru:INN>2543123721</cat_ru:INN>
+              </RFOrganizationFeatures>
+            </ESADout_CUCustomsPayment>
+          </ESADout_CUPayments>
+        </ESADout_CUGoodsShipment>
+        <FilledPerson>
+          <RUDECLcat:SigningDetails>
+            <cat_ru:PersonSurname>ДЕРКАЧЕВ</cat_ru:PersonSurname>
+            <cat_ru:PersonName>ИГОРЬ</cat_ru:PersonName>
+            <cat_ru:PersonMiddleName>ВАЛЕНТИНОВИЧ</cat_ru:PersonMiddleName>
+            <cat_ru:PersonPost>ДИРЕКТОР</cat_ru:PersonPost>
+            <RUScat_ru:CommunicationDetails>
+              <cat_ru:Phone>8(914)706-68-55</cat_ru:Phone>
+            </RUScat_ru:CommunicationDetails>
+            <RUScat_ru:SigningDate>2019-02-14</RUScat_ru:SigningDate>
+          </RUDECLcat:SigningDetails>
+          <RUDECLcat:SignatoryPersonIdentityDetails>
+            <cat_ru:IdentityCardCode>21</cat_ru:IdentityCardCode>
+            <cat_ru:IdentityCardName>ПАСРФ</cat_ru:IdentityCardName>
+            <cat_ru:IdentityCardSeries>05 09</cat_ru:IdentityCardSeries>
+            <cat_ru:IdentityCardNumber>698554</cat_ru:IdentityCardNumber>
+            <cat_ru:IdentityCardDate>2009-12-04</cat_ru:IdentityCardDate>
+            <cat_ru:OrganizationName>ОУФМС РОССИИ ПО ПРИМОРСКОМУ КРАЮ В ПЕРВОМАЙСКОМ РАЙОНЕ ГОР.ВЛАДИВОСТОКА</cat_ru:OrganizationName>
+            <RUDECLcat:DocumentPresentingDetails>
+              <RUDECLcat:DocPresentKindCode>0</RUDECLcat:DocPresentKindCode>
+              <RUDECLcat:PresentedDocumentModeCode>11001</RUDECLcat:PresentedDocumentModeCode>
+            </RUDECLcat:DocumentPresentingDetails>
+          </RUDECLcat:SignatoryPersonIdentityDetails>
+          <RUDECLcat:PowerOfAttorneyDetails>
+            <cat_ru:PrDocumentName>ПРИКАЗ</cat_ru:PrDocumentName>
+            <cat_ru:PrDocumentNumber>1</cat_ru:PrDocumentNumber>
+            <cat_ru:PrDocumentDate>2019-01-22</cat_ru:PrDocumentDate>
+            <RUScat_ru:DocStartDate>2019-01-22</RUScat_ru:DocStartDate>
+            <RUScat_ru:DocValidityDate>2020-12-31</RUScat_ru:DocValidityDate>
+            <RUDECLcat:DocumentPresentingDetails>
+              <RUDECLcat:DocPresentKindCode>0</RUDECLcat:DocPresentKindCode>
+              <RUDECLcat:PresentedDocumentModeCode>11003</RUDECLcat:PresentedDocumentModeCode>
+            </RUDECLcat:DocumentPresentingDetails>
+          </RUDECLcat:PowerOfAttorneyDetails>
+        </FilledPerson>
+      </ESADout_CU>
+    </DocBody>
+  </ContainerDoc>
+</ED_Container>
+<!--ND=00000000/140219/0000063-->
